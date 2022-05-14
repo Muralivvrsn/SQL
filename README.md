@@ -80,3 +80,17 @@ begin
    dbms_output.put_line('sum of  '||n||' natural numers  is '||s);
 end;
 ----------------------------------------------------------------------------------------------------------------------------
+MULTIPLICATION TABLE USING BASIC LOOP
+set serveroutput on;
+declare
+    n int:=&n;
+    s int:=0;
+    i int:=1;
+begin
+    loop
+         s:=(n*i);
+         dbms_output.put_line(n||'*'||i||'='||s);
+         exit when i=10;
+         i:=i+1;
+   end loop;
+end;

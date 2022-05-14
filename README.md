@@ -9,7 +9,7 @@ end;
 IF ELSE
 set serveroutput on;
 declare
-    n int:=&n;
+    n int:=&n;// IN SYSTEM WE DON'T USE '&' INSTEAD WE USE ':'
 begin
     if mod(n,2)=0 then
            dbms_output.put_line('given number is even');
@@ -92,5 +92,18 @@ begin
          dbms_output.put_line(n||'*'||i||'='||s);
          exit when i=10;
          i:=i+1;
+   end loop;
+end;
+----------------------------------------------------------------------------------------------------------------------------------\
+MULTIPLICATION TABLE USING FOR LOOP
+set serveroutput on;
+declare
+    n int:=&n;
+    s int:=0;
+begin
+    for i in 1..10
+    loop
+         s:=(n*i);
+         dbms_output.put_line(n||'*'||i||'='||s);
    end loop;
 end;
